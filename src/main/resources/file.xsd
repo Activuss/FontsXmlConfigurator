@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="fonts" type="fontsType"/>
+  <xs:complexType name="fontType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="style"/>
+        <xs:attribute type="xs:string" name="weight"/>
+        <xs:attribute type="xs:string" name="filename"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="familyType">
+    <xs:sequence>
+      <xs:element type="fontType" name="font"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="name"/>
+  </xs:complexType>
+  <xs:complexType name="fontsType">
+    <xs:sequence>
+      <xs:element type="familyType" name="family"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
