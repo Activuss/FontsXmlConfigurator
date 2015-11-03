@@ -1,24 +1,14 @@
 package domain;
 
 import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
 public class Font {
-    private String family;
     private String style;
     private String weight;
     private String fileName;
 
-    public String getFamily() {
-        return family;
-    }
-
-    @XmlElement
-    public void setFamily(String family) {
-        this.family = family;
-    }
 
     public String getStyle() {
         return style;
@@ -42,8 +32,17 @@ public class Font {
         return fileName;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "filename")
     public void setFileName(String fileName) {
         this.fileName = fileName;
+    }
+
+    @Override
+    public String toString() {
+        return "Font{" +
+                ", style='" + style + '\'' +
+                ", weight='" + weight + '\'' +
+                ", fileName='" + fileName + '\'' +
+                '}';
     }
 }

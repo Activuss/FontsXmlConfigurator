@@ -1,5 +1,10 @@
 <fonts>
 	<family name = 'Arial'>
-		<font style = 'normal italic' weight = 'normal bold' filename = 'arial.ttf'/>
+		<font style = 'italic' weight = 'normal bold' filename = 'arial_italic.ttf'/>
+		<font style = 'normal oblique' weight = 'normal bold' filename = 'arial_oblique.ttf'/>
+	</family>
+	<family name = 'Times'>
+		<font style = 'italic' weight = 'normal bold' filename = 'Times_italic.ttf'/>
+		<font style = 'normal oblique' weight = 'normal bold' filename = 'Times_oblique.ttf'/>
 	</family>
 </fonts>

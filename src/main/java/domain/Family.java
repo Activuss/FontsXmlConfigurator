@@ -1,0 +1,38 @@
+package domain;
+
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import java.util.List;
+
+@XmlRootElement
+public class Family {
+    @XmlElement(name = "font")
+    private List<Font> fontList;
+    private String name;
+
+    public List<Font> getFonts() {
+        return fontList;
+    }
+
+    public void setFonts(List<Font> fonts) {
+        this.fontList = fonts;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    @XmlAttribute
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "Family{" +
+                "fontList=" + fontList +
+                ", name='" + name + '\'' +
+                '}';
+    }
+}
