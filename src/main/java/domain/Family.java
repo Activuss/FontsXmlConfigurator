@@ -7,7 +7,6 @@ import java.util.List;
 
 @XmlRootElement(name = "family")
 public class Family {
-    @XmlElement(name = "font")
     private List<Font> fontList;
     private String name;
 
@@ -15,6 +14,7 @@ public class Family {
         return fontList;
     }
 
+    @XmlElement(name = "font")
     public void setFonts(List<Font> fonts) {
         this.fontList = fonts;
     }
