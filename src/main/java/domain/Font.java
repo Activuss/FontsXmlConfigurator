@@ -3,7 +3,7 @@ package domain;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement
+@XmlRootElement(name = "font")
 public class Font {
     private String style;
     private String weight;
