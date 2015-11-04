@@ -4,11 +4,8 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.util.List;
 
-/**
- * Created by illya.kolykhanin on 11/3/2015.
- */
-@XmlRootElement
-public class Fonts {
+@XmlRootElement(name = "fonts")
+public class Document {
     @XmlElement
     private List<Family> familyList;
 

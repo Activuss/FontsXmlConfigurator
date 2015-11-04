@@ -1,8 +1,8 @@
 package client;
 
+import domain.Document;
 import domain.Family;
 import domain.Font;
-import domain.Fonts;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -15,7 +15,7 @@ import java.util.List;
 public class MarshallerClient {
     public static void main(String[] args) {
 
-        Fonts fonts = new Fonts();
+        Document document = new Document();
 
         Family family = new Family();
         family.setName("Arial");
@@ -37,19 +37,19 @@ public class MarshallerClient {
         fontList.add(font2);
 
         family.setFonts(fontList);
-        fonts.setFamily(Arrays.asList(family));
+        document.setFamily(Arrays.asList(family));
 
         try {
             File file = new File("classpath:file.xml");
 
-            JAXBContext jaxbContext = JAXBContext.newInstance(Fonts.class);
+            JAXBContext jaxbContext = JAXBContext.newInstance(Document.class);
 //            JAXBContext jaxbContext = JAXBContext.newInstance(Font.class);
             Marshaller marshaller = jaxbContext.createMarshaller();
 
             marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 
 //            marshaller.marshal(font, file);
-            marshaller.marshal(fonts, System.out);
+            marshaller.marshal(document, System.out);
         } catch (JAXBException e) {
             e.printStackTrace();
         }
