@@ -6,7 +6,7 @@ import java.util.List;
 
 @XmlRootElement(name = "fonts")
 public class Document {
-    @XmlElement
+    @XmlElement(name = "family")
     private List<Family> familyList;
 
     public List<Family> getFamily() {
